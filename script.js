@@ -1,7 +1,7 @@
-const menuToggle = document.querySelector('.nav__toggle');
+﻿const menuToggle = document.querySelector('.nav__toggle');
 const heroVideo = document.querySelector('.hero__video');
-const categories = document.querySelector('.categories');
-const track = categories.querySelector('.categories__track');
+const carousel = document.querySelector('.carousel');
+const track = carousel.querySelector('.carousel__track');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (reducedMotion) heroVideo.pause();
@@ -51,16 +51,16 @@ const startAutoplay = () => {
   if (!reducedMotion) autoplay = setInterval(() => scrollByCards(1), 3500);
 };
 
-categories.addEventListener('pointerenter', stopAutoplay);
-categories.addEventListener('pointerleave', startAutoplay);
-categories.addEventListener('focusin', stopAutoplay);
-categories.addEventListener('focusout', startAutoplay);
+carousel.addEventListener('pointerenter', stopAutoplay);
+carousel.addEventListener('pointerleave', startAutoplay);
+carousel.addEventListener('focusin', stopAutoplay);
+carousel.addEventListener('focusout', startAutoplay);
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) stopAutoplay();
   else startAutoplay();
 });
 
-categories.querySelectorAll('.carousel-btn').forEach((button) => {
+carousel.querySelectorAll('.carousel-btn').forEach((button) => {
   button.addEventListener('click', () => scrollByCards(Number(button.dataset.step)));
 });
 
