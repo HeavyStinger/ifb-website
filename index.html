@@ -1,0 +1,139 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Discover Your Sparkle</title>
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Raleway:wght@500;600&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <i class="bi bi-list" aria-hidden="true"></i>
+        <i class="bi bi-x-lg" aria-hidden="true"></i>
+        <span class="sr-only">Menu</span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="./">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="collections.html">Collections</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="nav__cta"><a class="btn btn--primary" href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <a class="logo" href="./">
+      <img src="images/logo.webp" alt="IFB">
+    </a>
+
+    <div class="site-header__actions">
+      <a class="btn btn--primary" href="contact.html">Contact Us</a>
+      <a class="cart" href="cart.html">
+        <i class="bi bi-cart3" aria-hidden="true"></i>
+        <span class="sr-only">Cart</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <video class="hero__video" autoplay muted loop playsinline poster="images/hero-poster.webp" aria-hidden="true">
+        <source src="videos/hero.webm" type="video/webm">
+        <source src="videos/hero.mp4" type="video/mp4">
+      </video>
+
+      <div class="hero__content">
+        <h1 class="hero__title">Discover Your<br>Sparkle</h1>
+        <p class="hero__text">Welcoming In The Spring Season With An Enchanting Emerald, Diamond &amp; Gold Dace With Earrings.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="shop.html">Buy Now</a>
+          <a class="btn btn--prism" href="collections.html">Explore</a>
+        </div>
+        <p class="trust">
+          <i class="bi bi-gem" aria-hidden="true"></i>
+          <span class="trust__text">
+            <strong class="trust__number">500+</strong>
+            <span class="trust__label">Pieces made</span>
+          </span>
+        </p>
+      </div>
+    </section>
+
+    <section class="categories" aria-label="Shop by category">
+      <div class="categories__track">
+        <article class="cat-card">
+          <img class="cat-card__img" src="images/rings.webp" alt="" loading="lazy">
+          <hgroup>
+            <p class="cat-card__label">Categories</p>
+            <h2 class="cat-card__title">Rings</h2>
+          </hgroup>
+          <a class="btn btn--prism" href="rings.html">View Rings <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </article>
+
+        <article class="cat-card">
+          <img class="cat-card__img" src="images/necklaces.webp" alt="" loading="lazy">
+          <hgroup>
+            <p class="cat-card__label">Categories</p>
+            <h2 class="cat-card__title">Necklaces</h2>
+          </hgroup>
+          <a class="btn btn--prism" href="necklaces.html">View Necklaces <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </article>
+
+        <article class="cat-card cat-card--dark">
+          <img class="cat-card__img cat-card__img--pendants" src="images/pendants.webp" alt="" loading="lazy">
+          <hgroup>
+            <p class="cat-card__label">Categories</p>
+            <h2 class="cat-card__title">Pendants</h2>
+          </hgroup>
+          <a class="btn btn--prism" href="pendants.html">View Pendants <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </article>
+
+        <article class="cat-card">
+          <img class="cat-card__img" src="images/earrings.webp" alt="" loading="lazy">
+          <hgroup>
+            <p class="cat-card__label">Categories</p>
+            <h2 class="cat-card__title">Earrings</h2>
+          </hgroup>
+          <a class="btn btn--prism" href="earrings.html">View Earrings <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </article>
+
+        <article class="cat-card">
+          <img class="cat-card__img" src="images/bracelets.webp" alt="" loading="lazy">
+          <hgroup>
+            <p class="cat-card__label">Categories</p>
+            <h2 class="cat-card__title">Bracelets</h2>
+          </hgroup>
+          <a class="btn btn--prism" href="bracelets.html">View Bracelets <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </article>
+
+        <article class="cat-card">
+          <img class="cat-card__img" src="images/ring.webp" alt="" loading="lazy">
+          <hgroup>
+            <p class="cat-card__label">Categories</p>
+            <h2 class="cat-card__title">Bangles</h2>
+          </hgroup>
+          <a class="btn btn--prism" href="bangles.html">View Bangles <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </article>
+      </div>
+
+      <div class="categories__controls">
+        <button class="carousel-btn" type="button" data-step="-1">
+          <i class="bi bi-chevron-left" aria-hidden="true"></i>
+          <span class="sr-only">Previous categories</span>
+        </button>
+        <button class="carousel-btn" type="button" data-step="1">
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+          <span class="sr-only">Next categories</span>
+        </button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
