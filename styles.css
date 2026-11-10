@@ -4,9 +4,10 @@
   --edge: clamp(1.25rem, 6vw, 6rem); /* side gutter shared by every section */
 
   /* Golden-ratio type scale: 1rem x 1.618^n. Only these sizes are used. */
+  --fs-minus-half: 0.786rem;
   --fs-0: 1rem;
-  --fs-half: 1.272rem;
   --fs-1: 1.618rem;
+  --fs-1-5: 2.058rem;
   --fs-2: 2.618rem;
   --fs-3: 4.236rem;
   --fs-4: 6.854rem;
@@ -320,7 +321,7 @@ body:has(.nav__toggle[aria-expanded="true"]) {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
-  margin-top: var(--space-2); /* double the h1 to paragraph gap */
+  margin-top: 35px;
 }
 
 .hero__actions .btn {
@@ -336,7 +337,7 @@ body:has(.nav__toggle[aria-expanded="true"]) {
 
 .trust .bi {
   display: block;
-  font-size: var(--fs-2);
+  font-size: var(--fs-1-5);
   line-height: 1;
 }
 
@@ -353,11 +354,12 @@ body:has(.nav__toggle[aria-expanded="true"]) {
 
 .trust__number {
   font-family: var(--font-display);
-  font-size: var(--fs-half);
+  font-size: var(--fs-0);
   line-height: 1;
 }
 
 .trust__label {
+  font-size: var(--fs-minus-half);
   line-height: 1;
   color: var(--text-muted);
 }
