@@ -1,10 +1,15 @@
-﻿const menuToggle = document.querySelector('.nav__toggle');
+﻿const siteHeader = document.querySelector('.site-header');
+const menuToggle = document.querySelector('.nav__toggle');
 const heroVideo = document.querySelector('.hero__video');
 const carousel = document.querySelector('.carousel');
 const track = carousel.querySelector('.carousel__track');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (reducedMotion) heroVideo.pause();
+
+const updateHeader = () => siteHeader.classList.toggle('is-scrolled', scrollY > 0);
+addEventListener('scroll', updateHeader, { passive: true });
+updateHeader();
 
 function setMenuOpen(open) {
   menuToggle.setAttribute('aria-expanded', open);
@@ -19,11 +24,13 @@ document.addEventListener('keydown', (event) => {
 matchMedia('(min-width: 900px)').addEventListener('change', () => setMenuOpen(false));
 
 // The carousel loops: the cards are cloned before and after so the strip can
-// wrap around, and the view is kept inside the middle set.
+// wrap around, and the view is kept inside the middle set. Clones stay clickable
+// (they can be on screen next to the last card) but are skipped by keyboard and screen readers.
 const cards = [...track.children];
 const cloneCards = () => cards.map((card) => {
   const clone = card.cloneNode(true);
-  clone.inert = true;
+  clone.setAttribute('aria-hidden', 'true');
+  clone.querySelectorAll('a').forEach((link) => link.setAttribute('tabindex', '-1'));
   return clone;
 });
 track.prepend(...cloneCards());
