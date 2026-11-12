@@ -772,10 +772,9 @@ body:has(.nav__toggle[aria-expanded="true"]) {
   color: #55555c;
 }
 
-/* Centred under the F: the F sits 0.17em left of the page centre, so pad the right side by twice that */
 .site-footer__powered {
   margin: 0;
-  padding: 0 calc(0.34 * var(--wordmark-size)) var(--space-3) 0;
+  padding: 0 0 var(--space-3);
   color: #55555c;
   text-align: center;
 }
@@ -786,37 +785,66 @@ body:has(.nav__toggle[aria-expanded="true"]) {
   text-underline-offset: 0.2em;
 }
 
-/* Brand name spread edge to edge, sized so it fits any width. The size is shared with the credit line below it.
-
-   The em margins cancel each letter's built-in side space (Marcellus metrics), so the
-   ink sits flush with both gutters and the gaps between the letters are equal. */
+/* Brand name, sized from the footer width so it fits any screen; the credit line below shares the size.
+   Phones: each letter is centred in a third of the width, so the F sits on the centre line
+   and the credit centred under the footer lines up with it. */
 .site-footer__wordmark,
 .site-footer__powered {
-  --wordmark-size: min(calc((100cqw - 2 * var(--edge)) / 1.19), 26rem);
+  --wordmark-size: calc((100cqw - 2 * var(--edge)) * 0.6);
 }
 
 .site-footer__wordmark {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   margin: 0;
   pointer-events: none; /* the letters' font box extends over the row above and would block its links */
   font-family: var(--font-display);
   font-size: var(--wordmark-size);
   line-height: 0.71; /* box height equals the capital height, so the letters sit on the bottom edge */
+  text-align: center;
 }
 
-.site-footer__wordmark span:first-child {
-  margin-left: -0.07em;
-}
-
+/* nudges the F and B so their ink (not their box) is centred in the column */
 .site-footer__wordmark span:nth-child(2) {
-  margin-inline: -0.025em 0.025em;
+  padding-right: 0.044em;
 }
 
 .site-footer__wordmark span:last-child {
-  margin-right: -0.031em;
+  padding-right: 0.029em;
 }
 @media (min-width: 700px) {
+  /* Tablet and up: letters spread edge to edge. The em margins cancel each letter's built-in
+     side space (Marcellus metrics), so the ink is flush with both gutters and the gaps are equal.
+     The F then sits 0.17em left of centre, so the credit gets right padding of twice that to sit under it. */
+  .site-footer__wordmark,
+  .site-footer__powered {
+    --wordmark-size: min(calc((100cqw - 2 * var(--edge)) / 1.19), 26rem);
+  }
+
+  .site-footer__wordmark {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .site-footer__wordmark span:first-child {
+    margin-left: -0.07em;
+  }
+
+  .site-footer__wordmark span:nth-child(2) {
+    padding-right: 0;
+    margin-inline: -0.025em 0.025em;
+  }
+
+  .site-footer__wordmark span:last-child {
+    padding-right: 0;
+    margin-right: -0.031em;
+  }
+
+  .site-footer__powered {
+    padding-right: calc(0.34 * var(--wordmark-size));
+  }
+
   .hero::before {
     background:
       linear-gradient(90deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15) 70%),
