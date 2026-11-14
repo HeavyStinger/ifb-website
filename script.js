@@ -1,74 +1,28 @@
 ﻿const siteHeader = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.nav__toggle');
-const heroVideo = document.querySelector('.hero__video');
-const carousel = document.querySelector('.carousel');
-const track = carousel.querySelector('.carousel__track');
-const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-if (reducedMotion) heroVideo.pause();
-
-const updateHeader = () => siteHeader.classList.toggle('is-scrolled', scrollY > 0);
+// Pages without a full-screen hero mark the header data-solid so it stays white from the top
+const alwaysSolid = siteHeader.hasAttribute('data-solid');
+const updateHeader = () => siteHeader.classList.toggle('is-scrolled', alwaysSolid || scrollY > 0);
 addEventListener('scroll', updateHeader, { passive: true });
 updateHeader();
 
 function setMenuOpen(open) {
-  menuToggle.setAttribute('aria-expanded', open);
+	menuToggle.setAttribute('aria-expanded', open);
 }
 
 menuToggle.addEventListener('click', () => {
-  setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
+	setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
 });
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') setMenuOpen(false);
+	if (event.key === 'Escape') setMenuOpen(false);
 });
-matchMedia('(min-width: 900px)').addEventListener('change', () => setMenuOpen(false));
+matchMedia('(min-width: 1280px)').addEventListener('change', () => setMenuOpen(false));
 
-// The carousel loops: the cards are cloned before and after so the strip can
-// wrap around, and the view is kept inside the middle set. Clones stay clickable
-// (they can be on screen next to the last card) but are skipped by keyboard and screen readers.
-const cards = [...track.children];
-const cloneCards = () => cards.map((card) => {
-  const clone = card.cloneNode(true);
-  clone.setAttribute('aria-hidden', 'true');
-  clone.querySelectorAll('a').forEach((link) => link.setAttribute('tabindex', '-1'));
-  return clone;
+// Photos are a skeleton until they load. Load events do not bubble, so listen on the way down.
+document.addEventListener('load', (event) => {
+	if (event.target instanceof HTMLImageElement) event.target.classList.add('is-loaded');
+}, true);
+document.querySelectorAll('img').forEach((image) => {
+	if (image.complete) image.classList.add('is-loaded');
 });
-track.prepend(...cloneCards());
-track.append(...cloneCards());
-
-const cardStep = () =>
-  cards[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap);
-const jumpTo = (left) => track.scrollTo({ left, behavior: 'instant' });
-const scrollByCards = (count) =>
-  track.scrollBy({ left: cardStep() * count, behavior: reducedMotion ? 'instant' : 'smooth' });
-
-// Fires on load and whenever the track's width changes: start on the first real card
-new ResizeObserver(() => jumpTo(cardStep() * cards.length)).observe(track);
-
-track.addEventListener('scrollend', () => {
-  const setWidth = cardStep() * cards.length;
-  if (track.scrollLeft >= setWidth * 2 - 2) jumpTo(track.scrollLeft - setWidth);
-  else if (track.scrollLeft < setWidth - 2) jumpTo(track.scrollLeft + setWidth);
-});
-
-let autoplay;
-const stopAutoplay = () => clearInterval(autoplay);
-const startAutoplay = () => {
-  stopAutoplay();
-  if (!reducedMotion) autoplay = setInterval(() => scrollByCards(1), 3500);
-};
-
-carousel.addEventListener('pointerenter', stopAutoplay);
-carousel.addEventListener('pointerleave', startAutoplay);
-carousel.addEventListener('focusin', stopAutoplay);
-carousel.addEventListener('focusout', startAutoplay);
-document.addEventListener('visibilitychange', () => {
-  if (document.hidden) stopAutoplay();
-  else startAutoplay();
-});
-
-carousel.querySelectorAll('.carousel-btn').forEach((button) => {
-  button.addEventListener('click', () => scrollByCards(Number(button.dataset.step)));
-});
-
-startAutoplay();

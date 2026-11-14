@@ -1,0 +1,56 @@
+﻿const heroVideo = document.querySelector('.hero__video');
+const carousel = document.querySelector('.carousel');
+const track = carousel.querySelector('.carousel__track');
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (reducedMotion) heroVideo.pause();
+
+// The carousel loops: the cards are cloned before and after so the strip can
+// wrap around, and the view is kept inside the middle set. Clones stay clickable
+// (they can be on screen next to the last card) but are skipped by keyboard and screen readers.
+const cards = [...track.children];
+const cloneCards = () => cards.map((card) => {
+	const clone = card.cloneNode(true);
+	clone.setAttribute('aria-hidden', 'true');
+	clone.querySelectorAll('a').forEach((link) => link.setAttribute('tabindex', '-1'));
+	return clone;
+});
+track.prepend(...cloneCards());
+track.append(...cloneCards());
+
+const cardStep = () =>
+	cards[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap);
+const jumpTo = (left) => track.scrollTo({ left, behavior: 'instant' });
+const scrollByCards = (count) =>
+	track.scrollBy({ left: cardStep() * count, behavior: reducedMotion ? 'instant' : 'smooth' });
+
+// Fires on load and whenever the track's width changes: start on the first real card
+new ResizeObserver(() => jumpTo(cardStep() * cards.length)).observe(track);
+
+track.addEventListener('scrollend', () => {
+	const setWidth = cardStep() * cards.length;
+	if (track.scrollLeft >= setWidth * 2 - 2) jumpTo(track.scrollLeft - setWidth);
+	else if (track.scrollLeft < setWidth - 2) jumpTo(track.scrollLeft + setWidth);
+});
+
+let autoplay;
+const stopAutoplay = () => clearInterval(autoplay);
+const startAutoplay = () => {
+	stopAutoplay();
+	if (!reducedMotion) autoplay = setInterval(() => scrollByCards(1), 3500);
+};
+
+carousel.addEventListener('pointerenter', stopAutoplay);
+carousel.addEventListener('pointerleave', startAutoplay);
+carousel.addEventListener('focusin', stopAutoplay);
+carousel.addEventListener('focusout', startAutoplay);
+document.addEventListener('visibilitychange', () => {
+	if (document.hidden) stopAutoplay();
+	else startAutoplay();
+});
+
+carousel.querySelectorAll('.carousel-btn').forEach((button) => {
+	button.addEventListener('click', () => scrollByCards(Number(button.dataset.step)));
+});
+
+startAutoplay();

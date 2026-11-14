@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Shop Jewelry | IFB</title>
+	<meta name="description" content="Browse IFB rings, earrings, necklaces and bracelets in moissanite and lab-grown diamond.">
+	<link rel="canonical" href="https://heavystinger.github.io/ifb-website/shop.html">
+	<meta name="theme-color" content="#ebebeb">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="IFB">
+	<meta property="og:title" content="Shop Jewelry | IFB">
+	<meta property="og:description" content="Browse IFB rings, earrings, necklaces and bracelets in moissanite and lab-grown diamond.">
+	<meta property="og:url" content="https://heavystinger.github.io/ifb-website/shop.html">
+	<meta property="og:image" content="https://heavystinger.github.io/ifb-website/images/hero-poster.webp">
+	<meta property="og:image:alt" content="IFB jewelry">
+	<meta name="twitter:card" content="summary_large_image">
+	<link rel="icon" href="images/favicon.ico" sizes="any">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Raleway:wght@500;600&display=swap">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="styles.css">
+	<script src="script.js" defer></script>
+	<script src="shop.js" defer></script>
+</head>
+<body>
+	<header class="site-header" data-solid>
+		<nav class="nav">
+			<button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+				<i class="bi bi-list" aria-hidden="true"></i>
+				<i class="bi bi-x-lg" aria-hidden="true"></i>
+				<span class="sr-only">Menu</span>
+			</button>
+			<ul class="nav__links" id="nav-links">
+				<li><a href="./">Home</a></li>
+				<li class="nav__item nav__item--menu">
+					<a href="shop.html" aria-current="page">Shop</a>
+					<ul class="nav__submenu">
+						<li><a href="shop.html">All Products</a></li>
+						<li><a href="shop.html?category=rings">Rings</a></li>
+						<li><a href="shop.html?category=earrings">Earrings</a></li>
+						<li><a href="shop.html?category=necklaces">Necklaces</a></li>
+						<li><a href="shop.html?category=bracelets">Bracelets</a></li>
+					</ul>
+				</li>
+				<li><a href="portfolio.html">Portfolio</a></li>
+				<li><a href="custom-inquiries.html">Custom Inquiries</a></li>
+				<li><a href="faq.html">FAQ</a></li>
+				<li class="nav__cta"><a class="btn btn--primary" href="contact.html">Contact Us</a></li>
+			</ul>
+		</nav>
+
+		<a class="logo" href="./">
+			<img src="images/logo.webp" alt="IFB" width="268" height="176">
+		</a>
+
+		<div class="site-header__actions">
+			<a class="btn btn--secondary" href="contact.html">Contact Us</a>
+		</div>
+	</header>
+
+	<main class="shop">
+
+		<h1 class="section-title">All Products</h1>
+
+		<fieldset class="browse">
+			<legend class="sr-only">Browse by</legend>
+			<ul class="browse__list">
+				<li class="browse__item">
+					<input class="sr-only" type="radio" name="category" id="browse-all" value="all" checked>
+					<label class="browse__tile" for="browse-all">
+						<img class="browse__image" src="images/popular-gifts.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						<span class="browse__label">All Products</span>
+					</label>
+				</li>
+				<li class="browse__item">
+					<input class="sr-only" type="radio" name="category" id="browse-rings" value="rings">
+					<label class="browse__tile" for="browse-rings">
+						<img class="browse__image" src="images/categories/rings.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						<span class="browse__label">Moissanite Rings</span>
+					</label>
+				</li>
+				<li class="browse__item">
+					<input class="sr-only" type="radio" name="category" id="browse-earrings" value="earrings">
+					<label class="browse__tile" for="browse-earrings">
+						<img class="browse__image" src="images/categories/earrings.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						<span class="browse__label">Lab Diamond Earrings</span>
+					</label>
+				</li>
+				<li class="browse__item">
+					<input class="sr-only" type="radio" name="category" id="browse-necklaces" value="necklaces">
+					<label class="browse__tile" for="browse-necklaces">
+						<img class="browse__image" src="images/categories/necklaces.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						<span class="browse__label">Moissanite Necklaces</span>
+					</label>
+				</li>
+				<li class="browse__item">
+					<input class="sr-only" type="radio" name="category" id="browse-bracelets" value="bracelets">
+					<label class="browse__tile" for="browse-bracelets">
+						<img class="browse__image" src="images/categories/bracelets.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						<span class="browse__label">Bracelets</span>
+					</label>
+				</li>
+			</ul>
+		</fieldset>
+
+		<!-- Product pages are not built yet, so the cards are not links -->
+		<ul class="shop__list">
+				<li class="product" data-category="bracelets">
+					<div class="product__card">
+						<figure class="product__media">
+							<img class="product__image" src="images/categories/bracelets.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						</figure>
+						<h2 class="product__name">Pearl Charm Bracelet</h2>
+						<p class="product__price">$200.00</p>
+					</div>
+				</li>
+				<li class="product" data-category="bracelets">
+					<div class="product__card">
+						<figure class="product__media">
+							<img class="product__image" src="images/categories/bracelets.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						</figure>
+						<h2 class="product__name">Diamond Tennis Bracelet</h2>
+						<p class="product__price">$500.00</p>
+					</div>
+				</li>
+				<li class="product" data-category="bracelets">
+					<div class="product__card">
+						<figure class="product__media">
+							<img class="product__image" src="images/categories/bangles.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						</figure>
+						<h2 class="product__name">Silver Bangle</h2>
+						<p class="product__price">$120.00</p>
+					</div>
+				</li>
+				<li class="product" data-category="bracelets">
+					<div class="product__card">
+						<figure class="product__media">
+							<img class="product__image" src="images/categories/bracelets.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						</figure>
+						<h2 class="product__name">Gold Chain Bracelet</h2>
+						<p class="product__price">$150.00</p>
+					</div>
+				</li>
+				<li class="product" data-category="necklaces">
+					<div class="product__card">
+						<figure class="product__media">
+							<img class="product__image" src="images/categories/pendants.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						</figure>
+						<h2 class="product__name">Statement Pendant</h2>
+						<p class="product__price">$1,100.00</p>
+					</div>
+				</li>
+				<li class="product" data-category="necklaces">
+					<div class="product__card">
+						<figure class="product__media">
+							<img class="product__image" src="images/categories/necklaces.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						</figure>
+						<h2 class="product__name">Diamond Accent Chain</h2>
+						<p class="product__price">$400.00</p>
+					</div>
+				</li>
+				<li class="product" data-category="necklaces">
+					<div class="product__card">
+						<figure class="product__media">
+							<img class="product__image" src="images/categories/pendants.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						</figure>
+						<h2 class="product__name">Solitaire Pendant Necklace</h2>
+						<p class="product__price">$550.00</p>
+					</div>
+				</li>
+				<li class="product" data-category="earrings">
+					<div class="product__card">
+						<figure class="product__media">
+							<img class="product__image" src="images/categories/earrings.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						</figure>
+						<h2 class="product__name">Hoop Diamond Earrings</h2>
+						<p class="product__price">$1,500.00</p>
+					</div>
+				</li>
+				<li class="product" data-category="earrings">
+					<div class="product__card">
+						<figure class="product__media">
+							<img class="product__image" src="images/categories/earrings.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						</figure>
+						<h2 class="product__name">Dangle Diamond Earrings</h2>
+						<p class="product__price">$1,800.00</p>
+					</div>
+				</li>
+				<li class="product" data-category="earrings">
+					<div class="product__card">
+						<figure class="product__media">
+							<img class="product__image" src="images/categories/earrings.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						</figure>
+						<h2 class="product__name">Stud Diamond Earrings</h2>
+						<p class="product__price">$1,200.00</p>
+					</div>
+				</li>
+				<li class="product" data-category="rings">
+					<div class="product__card">
+						<figure class="product__media">
+							<img class="product__image" src="images/categories/rings.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						</figure>
+						<h2 class="product__name">Sparkling Band Ring</h2>
+						<p class="product__price">$600.00</p>
+					</div>
+				</li>
+				<li class="product" data-category="rings">
+					<div class="product__card">
+						<figure class="product__media">
+							<img class="product__image" src="images/categories/rings.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						</figure>
+						<h2 class="product__name">Diamond Halo Ring</h2>
+						<p class="product__price">$900.00</p>
+					</div>
+				</li>
+				<li class="product" data-category="rings">
+					<div class="product__card">
+						<figure class="product__media">
+							<img class="product__image" src="images/categories/rings.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						</figure>
+						<h2 class="product__name">Classic Solitaire Ring</h2>
+						<p class="product__price">$750.00</p>
+					</div>
+				</li>
+		</ul>
+
+		<p class="shop__count"></p>
+	</main>
+
+	<footer class="site-footer">
+		<div class="site-footer__brand">
+			<a class="site-footer__logo" href="./">
+				<img src="images/logo.webp" alt="IFB" width="268" height="176">
+			</a>
+			<p class="site-footer__intro">Looking for a gift or a custom piece? Get in touch and we'll help you find the right one.</p>
+		</div>
+
+		<nav class="site-footer__nav" aria-label="Footer">
+			<div>
+				<h2 class="site-footer__heading">Shop</h2>
+				<ul>
+					<li><a href="shop.html">All Products</a></li>
+					<li><a href="shop.html?category=rings">Rings</a></li>
+					<li><a href="shop.html?category=earrings">Earrings</a></li>
+					<li><a href="shop.html?category=necklaces">Necklaces</a></li>
+					<li><a href="shop.html?category=bracelets">Bracelets</a></li>
+				</ul>
+			</div>
+			<div>
+				<h2 class="site-footer__heading">Company</h2>
+				<ul>
+					<li><a href="portfolio.html">Portfolio</a></li>
+					<li><a href="custom-inquiries.html">Custom Inquiries</a></li>
+					<li><a href="faq.html">FAQ</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+			<div>
+				<h2 class="site-footer__heading">Follow</h2>
+				<ul>
+					<li><a href="https://www.instagram.com/ifb.bz/" target="_blank" rel="noopener">Instagram</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<p class="site-footer__bottom">
+			<span>&copy; 2026 IFB</span>
+			<span>Powered by <a href="https://ctechintl.com" target="_blank" rel="noopener">Ctech International</a></span>
+		</p>
+	</footer>
+</body>
+</html>

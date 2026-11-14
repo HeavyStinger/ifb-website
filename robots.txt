@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://heavystinger.github.io/ifb-website/sitemap.xml
