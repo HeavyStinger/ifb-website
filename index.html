@@ -38,7 +38,11 @@
 	}
 	</script>
 </head>
-<body>
+<body class="home">
+	<a class="logo" href="./">
+		<img src="images/logo.webp" alt="IFB" width="268" height="176">
+	</a>
+
 	<header class="site-header">
 		<nav class="nav">
 			<button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links">
@@ -64,10 +68,6 @@
 				<li class="nav__cta"><a class="btn btn--primary" href="contact.html">Contact Us</a></li>
 			</ul>
 		</nav>
-
-		<a class="logo" href="./">
-			<img src="images/logo.webp" alt="IFB" width="268" height="176">
-		</a>
 
 		<div class="site-header__actions">
 			<a class="btn btn--secondary" href="contact.html">Contact Us</a>
@@ -102,7 +102,7 @@
 			<ul class="shop-categories__grid">
 				<li>
 					<a class="category-tile" href="shop.html?category=rings">
-						<img src="images/categories/rings.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						<img src="images/home/rings.webp" alt="" width="800" height="800" loading="lazy" decoding="async">
 						<span class="category-tile__label">Rings</span>
 					</a>
 				</li>
@@ -114,7 +114,7 @@
 				</li>
 				<li>
 					<a class="category-tile" href="shop.html?category=necklaces">
-						<img src="images/categories/pendants.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						<img src="images/home/pendants.webp" alt="" width="800" height="800" loading="lazy" decoding="async">
 						<span class="category-tile__label">Pendants</span>
 					</a>
 				</li>
@@ -126,7 +126,7 @@
 				</li>
 				<li>
 					<a class="category-tile" href="shop.html?category=bracelets">
-						<img src="images/categories/bracelets.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+						<img src="images/home/bracelets.webp" alt="" width="800" height="800" loading="lazy" decoding="async">
 						<span class="category-tile__label">Bracelets</span>
 					</a>
 				</li>
@@ -139,9 +139,56 @@
 			</ul>
 		</section>
 
+		<section class="category-wide" aria-label="Shop by category">
+			<ul class="category-wide__list">
+			<li>
+				<a class="category-wide__card" href="shop.html?category=rings">
+					<img class="category-wide__image" src="images/home/rings.webp" alt="" width="800" height="800" loading="lazy" decoding="async">
+					<h3 class="category-wide__title">Rings</h3>
+					<span class="category-wide__action" aria-hidden="true">Shop Now <i class="bi bi-arrow-right"></i></span>
+				</a>
+			</li>
+			<li>
+				<a class="category-wide__card" href="shop.html?category=necklaces">
+					<img class="category-wide__image" src="images/categories/necklaces.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+					<h3 class="category-wide__title">Necklaces</h3>
+					<span class="category-wide__action" aria-hidden="true">Shop Now <i class="bi bi-arrow-right"></i></span>
+				</a>
+			</li>
+			<li>
+				<a class="category-wide__card" href="shop.html?category=necklaces">
+					<img class="category-wide__image" src="images/home/pendants.webp" alt="" width="800" height="800" loading="lazy" decoding="async">
+					<h3 class="category-wide__title">Pendants</h3>
+					<span class="category-wide__action" aria-hidden="true">Shop Now <i class="bi bi-arrow-right"></i></span>
+				</a>
+			</li>
+			<li>
+				<a class="category-wide__card" href="shop.html?category=earrings">
+					<img class="category-wide__image" src="images/categories/earrings.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+					<h3 class="category-wide__title">Earrings</h3>
+					<span class="category-wide__action" aria-hidden="true">Shop Now <i class="bi bi-arrow-right"></i></span>
+				</a>
+			</li>
+			<li>
+				<a class="category-wide__card" href="shop.html?category=bracelets">
+					<img class="category-wide__image" src="images/home/bracelets.webp" alt="" width="800" height="800" loading="lazy" decoding="async">
+					<h3 class="category-wide__title">Bracelets</h3>
+					<span class="category-wide__action" aria-hidden="true">Shop Now <i class="bi bi-arrow-right"></i></span>
+				</a>
+			</li>
+			<li>
+				<a class="category-wide__card" href="shop.html?category=bracelets">
+					<img class="category-wide__image" src="images/categories/bangles.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+					<h3 class="category-wide__title">Bangles</h3>
+					<span class="category-wide__action" aria-hidden="true">Shop Now <i class="bi bi-arrow-right"></i></span>
+				</a>
+			</li>
+			</ul>
+		</section>
+
 		<section class="popular-gifts">
 			<h2 class="section-title">Most popular gifts</h2>
-			<img class="popular-gifts__image" src="images/popular-gifts.webp" alt="" width="1600" height="800" loading="lazy" decoding="async">
+			<img class="popular-gifts__image" src="images/home/gifts.webp" alt="" width="1600" height="800" loading="lazy" decoding="async">
 			<div class="carousel">
 				<div class="carousel__controls">
 					<button class="carousel-btn" type="button" data-step="-1">
@@ -154,8 +201,8 @@
 					</button>
 				</div>
 				<div class="carousel__track">
-					<article class="cat-card">
-						<img class="cat-card__img" src="images/rings.webp" alt="" width="584" height="349" loading="lazy" decoding="async">
+					<article class="cat-card cat-card--dark">
+						<img class="cat-card__img" src="images/home/card-rings.webp" alt="" width="900" height="900" loading="lazy" decoding="async">
 						<hgroup>
 							<p class="cat-card__label">Categories</p>
 							<h2 class="cat-card__title">Rings</h2>
@@ -163,8 +210,8 @@
 						<a class="btn btn--secondary" href="shop.html?category=rings">View Rings <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 					</article>
 
-					<article class="cat-card">
-						<img class="cat-card__img" src="images/necklaces.webp" alt="" width="825" height="590" loading="lazy" decoding="async">
+					<article class="cat-card cat-card--dark">
+						<img class="cat-card__img" src="images/home/card-necklaces.webp" alt="" width="900" height="900" loading="lazy" decoding="async">
 						<hgroup>
 							<p class="cat-card__label">Categories</p>
 							<h2 class="cat-card__title">Necklaces</h2>
@@ -173,7 +220,7 @@
 					</article>
 
 					<article class="cat-card cat-card--dark">
-						<img class="cat-card__img cat-card__img--pendants" src="images/pendants.webp" alt="" width="682" height="1031" loading="lazy" decoding="async">
+						<img class="cat-card__img" src="images/home/card-pendants.webp" alt="" width="900" height="900" loading="lazy" decoding="async">
 						<hgroup>
 							<p class="cat-card__label">Categories</p>
 							<h2 class="cat-card__title">Pendants</h2>
@@ -181,8 +228,8 @@
 						<a class="btn btn--secondary" href="shop.html?category=necklaces">View Pendants <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 					</article>
 
-					<article class="cat-card">
-						<img class="cat-card__img" src="images/earrings.webp" alt="" width="584" height="469" loading="lazy" decoding="async">
+					<article class="cat-card cat-card--dark">
+						<img class="cat-card__img" src="images/home/card-earrings.webp" alt="" width="900" height="900" loading="lazy" decoding="async">
 						<hgroup>
 							<p class="cat-card__label">Categories</p>
 							<h2 class="cat-card__title">Earrings</h2>
@@ -190,8 +237,8 @@
 						<a class="btn btn--secondary" href="shop.html?category=earrings">View Earrings <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 					</article>
 
-					<article class="cat-card">
-						<img class="cat-card__img" src="images/bracelets.webp" alt="" width="401" height="401" loading="lazy" decoding="async">
+					<article class="cat-card cat-card--dark">
+						<img class="cat-card__img" src="images/home/card-bracelets.webp" alt="" width="900" height="900" loading="lazy" decoding="async">
 						<hgroup>
 							<p class="cat-card__label">Categories</p>
 							<h2 class="cat-card__title">Bracelets</h2>
@@ -199,8 +246,8 @@
 						<a class="btn btn--secondary" href="shop.html?category=bracelets">View Bracelets <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
 					</article>
 
-					<article class="cat-card">
-						<img class="cat-card__img" src="images/ring.webp" alt="" width="1206" height="597" loading="lazy" decoding="async">
+					<article class="cat-card cat-card--dark">
+						<img class="cat-card__img" src="images/home/card-bangles.webp" alt="" width="900" height="900" loading="lazy" decoding="async">
 						<hgroup>
 							<p class="cat-card__label">Categories</p>
 							<h2 class="cat-card__title">Bangles</h2>
@@ -216,7 +263,7 @@
 				<li>
 					<a class="portfolio-item" href="portfolio.html#designer-lab-diamond-bracelets">
 						<figure class="portfolio-item__media">
-							<img class="portfolio-item__image" src="images/categories/bracelets.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+							<img class="portfolio-item__image" src="images/home/bracelets.webp" alt="" width="800" height="800" loading="lazy" decoding="async">
 						</figure>
 						<div class="portfolio-item__caption">
 							<h3 class="portfolio-item__title">Designer Lab Diamond Bracelets</h3>
@@ -228,7 +275,7 @@
 				<li>
 					<a class="portfolio-item" href="portfolio.html#anniversary-milestone-jewelry">
 						<figure class="portfolio-item__media">
-							<img class="portfolio-item__image" src="images/categories/pendants.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+							<img class="portfolio-item__image" src="images/home/pendants.webp" alt="" width="800" height="800" loading="lazy" decoding="async">
 						</figure>
 						<div class="portfolio-item__caption">
 							<h3 class="portfolio-item__title">Anniversary &amp; Milestone Jewelry</h3>
@@ -264,7 +311,7 @@
 				<li>
 					<a class="portfolio-item" href="portfolio.html#ethereal-brilliance-collection">
 						<figure class="portfolio-item__media">
-							<img class="portfolio-item__image" src="images/categories/rings.webp" alt="" width="600" height="600" loading="lazy" decoding="async">
+							<img class="portfolio-item__image" src="images/home/rings.webp" alt="" width="800" height="800" loading="lazy" decoding="async">
 						</figure>
 						<div class="portfolio-item__caption">
 							<h3 class="portfolio-item__title">Ethereal Brilliance Collection</h3>
